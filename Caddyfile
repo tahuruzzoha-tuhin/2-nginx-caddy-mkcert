@@ -1,0 +1,18 @@
+react.localhost {
+        handle /api {
+        uri strip_prefix api
+        reverse_proxy http://localhost:8081
+    }
+    reverse_proxy http://localhost:3000
+}
+express.localhost {
+    handle /8081 {
+        uri strip_prefix 8081
+        reverse_proxy http://localhost:8081
+    }
+    handle /8082 {
+        uri strip_prefix 8082
+        reverse_proxy http://localhost:8082
+    }
+    reverse_proxy http://localhost:8081
+}

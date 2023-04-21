@@ -1,0 +1,4 @@
+localhost {
+     tls /certs/local.crt /certs/local.key
+    respond "Hello World"
+}
